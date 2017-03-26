@@ -1,0 +1,30 @@
+# Reading and Saving Hive and Json data:
+
+import org.apache.spark.sql.hive.HiveContext
+val sqlContext = new HiveContext(sc) # creating hive context
+val depts = sqlContext.sql("select * from departments") # creating RDD from departments table
+depts.collect().foreach(println) # printing the data
+
+# creating table from existing hive table and reading data from new table
+sqlContext.sql("create table departmentssparkscala as select * from departments")
+val depts = sqlContext.sql("select * from departmentssparkscala")
+depts.collect().foreach(println)
+# we can do any hive operation like above code snippet
+
+# Reading and Saving Json data
+# Lets assume we have json data in our linux file system
+# Copying json file to HDFS
+hadoop fs -put departments.json /user/cloudera/sparkscala/
+
+import org.hadoop.spark.sql.SQLContext
+val sqlContext = new SQLContext(sc)
+val departmentsjson = sqlContext.jsonFile("/user/cloudera/sparkscala/departments.json")
+departmentjson.registerTempTable("departmentTable")
+val departmentsData = sqlContext("select * from departmentsTable")
+departmentsData.collect().foreach(println)
+
+# Writting data in json format
+departmentsData.toJSON.saveAsTextFile('/user/coludera/scalaspark/departmentsJson')
+
+# Validating the data
+hadoop fs -cat /user/cloudera/scalaaprk/departmentsJson/part-*
