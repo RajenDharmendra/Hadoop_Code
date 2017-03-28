@@ -28,3 +28,11 @@ departmentsData.toJSON.saveAsTextFile('/user/coludera/scalaspark/departmentsJson
 
 # Validating the data
 hadoop fs -cat /user/cloudera/scalaaprk/departmentsJson/part-*
+
+########################################################################################################################
+# Word count using scala
+val data = sc.textFile("/user/cloudera/wordcount.txt")
+val dataFlatMap = data.flatMap(x => x.split(" "))
+val dataMap = dataFlatMap.map(x => (x, 1))
+val dataReduceByKey = dataMap.reduceByKey((x, y) => x + y)
+dataReduceByKey.saveAsTextFile("/user/cloudera/wordcountoutput")
