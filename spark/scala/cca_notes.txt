@@ -36,3 +36,38 @@ val dataFlatMap = data.flatMap(x => x.split(" "))
 val dataMap = dataFlatMap.map(x => (x, 1))
 val dataReduceByKey = dataMap.reduceByKey((x, y) => x + y)
 dataReduceByKey.saveAsTextFile("/user/cloudera/wordcountoutput")
+
+########################################################################################################################
+
+# Joining data sets
+# Problem statement. Get the revenue and number of orders from order_items on daily basis
+
+# Loading data sets into RDD
+val ordersRDD = sc.textFile("/user/cloudera/sqoop_imports/orders")
+val orderItemsRDD = sc.textFile("/usert/cloudera/sqoop_imports/order_items")
+
+# Converting records into Key, Value pairs
+val ordersParsedRDD = ordersRDD.map(rec => (rec.split(",")(0).toInt, rec))
+val ordersItemsParsedRDD = orderItemsRDD.map( rec => (rec.split(",")(1).toInt, rec))
+
+# Joinig datasets Uings keys
+val ordersJoinOrderItems = ordersParsedRDD.join(orderItemsParsedRDD)
+
+# Getting revenue per day
+val revenPerOrderPerDay = ordersJoinOrderItems.map(t => (t._2._2.split(",")(1), t._2._1.split(",")(4).toFloat
+
+# Getting Order count Per Day
+val ordersPerDay = ordersJoinOrderItems.map(rec => rec._2._2.split(",")(1) + "," + rec._1).distinct()
+
+val ordersPerDayParsedRDD = ordersPerDay.map(rec => (rec.split(",")(0), 1))
+val totalOrdersPerDay = ordersPerDayParsedRDD.reduceByKey((x,y) => x + y)
+
+# getting Revenue Per day from joined data sets
+
+val totalRevenuePerDay = revenuePerOrderPerDay.reduceByKey((total1, total2) => total1 + total2)
+
+# Joinig Total orders Per day and Total Revenue Per Day
+val finalJoinRDD = totalOrdersPerDay.join(totalRevenuePerDay)
+
+# Testing
+finalJoinRDD.take(5).foreach(println)
