@@ -72,31 +72,33 @@ val finalJoinRDD = totalOrdersPerDay.join(totalRevenuePerDay)
 # Testing
 finalJoinRDD.take(5).foreach(println)
 
-########################################################################################################################
+// ########################################################################################################################
 
-# Joining Data Sets using hive and sql context
-# ============================================
+// Joining Data Sets using hive and sql context
+// ============================================
 
 import org.apache.spark.sql.hive.HiveContext
 val sqlContext = new HiveContext(sc)
 
-# Overriding default number of partitions, Default partitions is 200
+// Overriding default number of partitions, Default partitions is 200
 sqlContext.sql("spark.sql.shuffle.partitions=10");
 
 val joinAggData = sqlContext.sql(
+  "
   SELECT  o.order_date,
           ROUND(SUM(oi.order_item_subtotal), 2),
           COUNT(DISTINCT o.order_id)
   FROM order o
   JOIN order_items oi
     ON o.order_id = oi.order_item_order_id
+  "
 )
 
-# printing the results
+// printing the results
 
 joinAggData.collect().foreach(println)
 
-# Using Spark native sql
+// Using Spark native sql
 import org.apache.spark.sql.SQLContext, org.apache.spark.sql.Row
 val sqlContext = new SQLContext(sc)
 sqlContext.sql("spark.sql.shuffle.partitions=10");
@@ -105,9 +107,38 @@ val ordersRDD = sc.textFile("/user/cloudera/sqoop_import/orders")
 val ordersMap = ordersRDD.map(o => o.split(","))
 
 case class Orders(
-  order_id: int,
+  order_id: Int,
   order_date: String,
-  order_customer_id: int,
+  order_customer_id: Int,
   order_status: String
 )
 val orders = ordersMap.map(o => Orders(o(0).toInt, o(1), o(2).toInt, o(3)))
+
+import sqlContext.creatSchemaRDD
+orders.registerTempTable("orders")
+
+// Registering order items table
+
+case class OrderItems(
+  order_item_id: Int,
+  order_item_order_id: Int,
+  order_item_product_id: Int,
+  order_item_quantity: Int,
+  order_item_subtotal: Float,
+  order_item_product_price: Float
+)
+
+val orderItems = (sc.textFile("/user/cloudera/sqoop_import/order_items")
+                .map(rec => rec.split(","))
+                .map(oi => OrderItems(oi(0).toInt, oi(1).toInt, oi(2).toInt, oi(3).toInt, oi(4).toFloat, oi(5).toFloat))
+              )
+orderItems.registerTempTable("order_items")
+
+val joinAggData = sqlContext.sql(
+  "select o.order_date, sum(oi.order_item_subtotal), " +
+  "count(distinct o.order_id) from orders o join order_items oi " +
+  "on o.order_id = oi.order_item_order_id " +
+  "group by o.order_date order by o.order_date"
+)
+
+joinAggData.collect().foreach(println)
