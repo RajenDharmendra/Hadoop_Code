@@ -142,3 +142,30 @@ val joinAggData = sqlContext.sql(
 )
 
 joinAggData.collect().foreach(println)
+
+// Aggrecations by key
+val ordersRDD = sc.textFile("/user/cloudera/sqoop_import/orders")
+val ordersMap = ordersRDD.map(rec => (rec.split(",")(3), 1))
+
+// Count By Key
+ordersMap.countByKey().foreach(println)
+
+// groupByKey is not very efficient for aggregations. It does not use combiner
+// groupByKey
+val ordersByStatus = ordersMap.groupByKey().map(t => (t._1, t._2.sum))
+
+
+// reduceByKey uses combiner - both reducer logic and combiner logic are same
+val ordersByStatus = ordersMap((acc, value) => acc + value)
+
+// combineByKey can be used when reduce logic and combine logic are different
+// Both reduceByKey and combineByKey expects type of input data and output data are same
+
+val ordersByStatus = ordersMap.combineByKey(value => 1, (acc:Int, value: Int) => acc + value, (acc: Int, value: Int) => acc + value)
+
+// aggregateByKey can be used when reduce logic and combine logic is different
+// Also type of input data and output data need not be same
+
+val ordersMap = ordersRDD.map(rec => (rec.split(",")(3), rec))
+val ordersByStatus = ordersMap.aggregateByKey(0, (acc, value) => acc + value, (acc, value) => acc + value)
+ordersByStatus.collect().foreach(println)
