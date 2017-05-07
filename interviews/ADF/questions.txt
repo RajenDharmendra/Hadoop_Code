@@ -1,0 +1,2 @@
+1) Learn about ETL tools
+2) performing all joins in SQL 

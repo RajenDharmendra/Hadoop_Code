@@ -1,0 +1,8 @@
+1) C and Java puzzles
+2) Data structure questions
+3) Query questions
+
+Snippets :
+  -- Best Case time Complexity for bubble sort
+  -- If we have 1 GB data and 100 MB Ram wich sort will be best -- Merage sort
+  -- binray search
