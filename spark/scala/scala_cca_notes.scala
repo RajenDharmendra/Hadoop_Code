@@ -169,3 +169,39 @@ val ordersByStatus = ordersMap.combineByKey(value => 1, (acc:Int, value: Int) =>
 val ordersMap = ordersRDD.map(rec => (rec.split(",")(3), rec))
 val ordersByStatus = ordersMap.aggregateByKey(0, (acc, value) => acc + value, (acc, value) => acc + value)
 ordersByStatus.collect().foreach(println)
+
+// #####################################################################################################################
+
+// #average
+// #average revenue per day
+// #Parse Orders (key order_id)
+// #Parse Order items (key order_item_order_id)
+// #Join the data sets
+// #Parse joined data and get (order_date, order_id) as key  and order_item_subtotal as value
+// #Use appropriate aggregate function to get sum(order_item_subtotal) for each order_date, order_id combination
+// #Parse data to discard order_id and get order_date as key and sum(order_item_subtotal) per order as value
+// #Use appropriate aggregate function to get sum(order_item_subtotal) per day and count(distinct order_id) per day
+// #Parse data and apply average logic
+
+val ordersRDD = sc.textFile("/user/cloudera/sqoop_import/orders")
+val orderItemsRDD = sc.textFile("/user/cloudera/sqoop_import/order_items")
+
+// 0 ==> order id, 1 ==> order date
+val ordersMap = ordersRDD.map( rec => (rec.split(",")(0).toINT, rec.split(",")(1)))
+// 1 ==> order items order id, 4 ==> revenue per order
+val orderItemsMap = orderItemsRDD.map(rec => (rec.split(",")(1).toINT, rec.split(",")(4).toFloat))
+
+//Join
+val ordersJoin = ordersMap.join(orderItemsMap)
+
+// Making keys as (date, order_id) and value is sub total
+val ordersJoinMap = ordersJoin.(rec => (rec._2._1, rec._1), rec._2._2)
+
+// adding up subtotal by each order per date
+val renenuePerOrder = ordersJoinMap.reduceByKey((acc, value) => acc + value)
+
+val renvenuePerOrderMap = revenuePerOrder.map(rec => (rec._1._1, rec._2))
+
+val renvenueAggPerDay = revenPerOrderPerMap.aggregateByKey((0.0, 0))((acc, value) => (acc._1 + value, acc._2 + 1), (acc, value) => (acc._1 + value_1, acc._2 + value._2))
+
+val renvenueAvgPerDay = renvenueAggPerDay.map(rec => (rec._1, rec._2._1 / rec._2._2))
