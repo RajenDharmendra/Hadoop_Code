@@ -1,0 +1,458 @@
+
+Cloudera Certified Associate Spark and Hadoop Developer
+by itversity
+
+36:41
+
+Hadoop Certification - CCA - Introduction
+by itversity
+
+9:22
+
+Big Data Environment - Sign up for big data labs
+by itversity
+
+8:12
+
+Big Data - Lab support for signup or login issues
+by itversity
+
+8:50
+
+Hadoop Certification - CCA - Using Cloudera Quickstart VM
+by itversity
+
+20:00
+
+Hadoop Certification - CCA - Using Cloudera Quickstart VM (Add on)
+by itversity
+
+16:27
+
+Cloudera Quickstart 5.5 Preview
+by itversity
+
+21:30
+
+Cloudera Quickstart 5.5 preview - CCA certification
+by itversity
+
+20:41
+
+Hadoop Certification - Sqoop commands - list and eval
+by itversity
+
+20:43
+
+Hadoop Certification - 01 Sqoop Import
+by itversity
+
+26:58
+
+Hadoop Certification - 02 Sqoop Import
+by itversity
+
+18:26
+
+Hadoop Certification - 02 Sqoop Import - Add on
+by itversity
+
+6:28
+
+Hadoop Certification - 03 Sqoop Import
+by itversity
+
+33:42
+
+Hadoop Certification - 04 Sqoop Import
+by itversity
+
+18:32
+
+Hadoop Certification - 05 Sqoop Import Incremental
+by itversity
+
+19:29
+
+Hadoop Certification - 01 Sqoop Export
+by itversity
+
+16:19
+
+Hadoop Certification - 02 Sqoop Export - Merge/Upsert
+by itversity
+
+27:24
+
+Hadoop Ceritfication - 01 Sqoop import delimiters
+by itversity
+
+30:33
+
+Hadoop Certification - 02 Sqoop export delimiters
+by itversity
+
+14:04
+
+Hadoop Certification - 03 Sqoop File Formats
+by itversity
+
+19:21
+
+Hadoop Certification - Sqoop Job and Sqoop Merge
+by itversity
+
+26:02
+
+Hadoop Certification - CCA - 01 Flume Introduction
+by itversity
+
+16:12
+
+Hadoop Certification - CCA - Flume - Setup Telnet
+by itversity
+
+8:25
+
+Hadoop Certification - CCA - Flume - Running first job (telnet to logger)
+by itversity
+
+15:35
+
+Hadoop Certification - CCA - Flume - Using HDFS Sink
+by itversity
+
+16:21
+
+Hadoop Certification - CCA - Flume - Ingest real time data into HDFS
+by itversity
+
+19:03
+
+Hadoop Certification - CCA - Copying data into HDFS
+by itversity
+
+15:37
+
+Hadoop Certification - CCA - Copying data from HDFS
+by itversity
+
+13:16
+
+Hadoop Certification - CCA - Spark Introduction
+by itversity
+
+16:04
+
+Hadoop Certification - CCA - Setup Spark 1.2.1 on Quickstart VM
+by itversity
+
+26:15
+
+Hadoop Certification - CCA - Introduction of pyspark (python on spark)
+by itversity
+
+21:58
+
+Hadoop Certification - CCA - Submitting pyspark applications
+by itversity
+
+12:50
+
+Hadoop Certification - CCA - Pyspark - Reading and Saving Text Files
+by itversity
+
+17:20
+
+Hadoop Certification - CCA - Pyspark - Reading and Saving Sequence Files
+by itversity
+
+23:42
+
+Hadoop Certification - CCA - Pyspark - Reading and Saving Hive and JSON data
+by itversity
+
+21:03
+
+Hadoop Certification - CCA - Pyspark - Developing Word Count program - flatMap, map, reduceByKey
+by itversity
+
+22:22
+
+Hadoop Certification - CCA - Word Count Explained
+by itversity
+
+16:58
+
+Hadoop Certification - CCA - Pyspark - 01 Joining Data Sets using Python
+by itversity
+
+32:43
+
+Hadoop Certification - CCA - Pyspark - 02 Joining Data Sets using Python
+by itversity
+
+22:41
+
+Hadoop Certification - CCA - Pyspark - 03 Joining Data Sets using SQL
+by itversity
+
+26:55
+
+Hadoop Certification - CCA - Pyspark - 01 Aggregating Data (totals)
+by itversity
+
+23:40
+
+Hadoop Certification - CCA - Pyspark - 02 Aggregating data (totals continued)
+by itversity
+
+8:14
+
+Hadoop Certification - CCA - Pyspark - 03 Aggregating Data by key - Introduction
+by itversity
+
+26:53
+
+Hadoop Certification - CCA - How Combiner Works?
+by itversity
+
+30:16
+
+Hadoop Certification - CCA - Combiner in reduceByKey and aggregateByKey
+by itversity
+
+26:16
+
+Hadoop Certification - CCA - Pyspark - 04 Average by key (join, reduceByKey and aggregateByKey)
+by itversity
+
+30:09
+
+Hadoop Certification - CCA - Pyspark - 05 Max By Key (includes SQL)
+by itversity
+
+29:44
+
+Hadoop Certification - CCA - Pyspark - Filtering data
+by itversity
+
+21:42
+
+Hadoop Certification - CCA - Pyspark - Global sorting and ranking (sortByKey, top and takeOrdered)
+by itversity
+
+15:20
+
+Hadoop Certification - CCA - Pyspark - Recap of python list operations and groupByKey
+by itversity
+
+18:23
+
+Hadoop Certification - CCA - Pyspark - Sorting and Ranking by key using groupByKey
+by itversity
+
+21:13
+
+Hadoop Certification - CCA - Pyspark - Sorting and Ranking using SQL
+by itversity
+
+22:49
+
+Hadoop Certification - CCA - Submitting scala applications
+by itversity
+
+19:16
+
+Hadoop Certification - CCA - Scala - Reading and Saving Text Files
+by itversity
+
+11:50
+
+Hadoop Certification - CCA - Scala - Reading and Saving Sequence Files
+by itversity
+
+21:46
+
+Hadoop Certification - CCA - Scala - Reading and Saving Hive and JSON data
+by itversity
+
+12:34
+
+Hadoop Certification - CCA - Scala - Developing Word Count program - flatMap, map, reduceByKey
+by itversity
+
+27:33
+
+Hadoop Certification - CCA - Word Count Explained
+by itversity
+
+16:58
+
+Hadoop Certification - CCA - Scala - 01 Joining Data Sets
+by itversity
+
+32:54
+
+Hadoop Certification - CCA - Scala - 02 Joining Data Sets using Hive or SQL Context in Scala
+by itversity
+
+19:54
+
+Hadoop Certification - CCA - Scala - 01 Aggregating Data (totals)
+by itversity
+
+25:32
+
+Hadoop Certification - CCA - Scala - 02 Aggregating Data by key - Introduction
+by itversity
+
+31:40
+
+Hadoop Certification - CCA - Scala - 03 Average by key (join, reduceByKey and aggregateByKey)
+by itversity
+
+35:05
+
+Hadoop Certification - CCA - How Combiner Works?
+by itversity
+
+30:16
+
+Hadoop Certification - CCA - Combiner in reduceByKey and aggregateByKey
+by itversity
+
+26:16
+
+Hadoop Certification - CCA - Scala - 04 Max By Key (includes SQL)
+by itversity
+
+27:28
+
+Hadoop Certification - CCA - Scala - Filtering data (includes sql)
+by itversity
+
+36:32
+
+Hadoop Certification - CCA - Scala - Global sorting and ranking (sortByKey, top and takeOrdered)
+by itversity
+
+15:39
+
+Hadoop Certification - CCA - Scala - Recap of scala list operations and groupByKey
+by itversity
+
+15:45
+
+Hadoop Certification - CCA - Scala - Sorting and Ranking by key using groupByKey
+by itversity
+
+24:14
+
+Hadoop Certification - CCA - Scala - Ranking by key using groupByKey (including SQL)
+by itversity
+
+21:23
+
+Hadoop Certification - CCA - Data Analysis introduction
+by itversity
+
+5:37
+
+Hadoop Certification - CCA - Hive Metastore
+by itversity
+
+40:42
+
+Data Warehouse using Hadoop eco system - 05 Create Databases Hive DDL Theory
+by itversity
+
+30:12
+
+Data Warehouse using Hadoop eco system - 06 Create Databases Hive DDL Demo
+by itversity
+
+37:59
+
+Data Warehouse using Hadoop eco system - 07 Extract and Load Sqoop Theory
+by itversity
+
+32:29
+
+Data Warehouse using Hadoop eco system - 08 02 Extract and Load Sqoop Demo
+by itversity
+
+35:13
+
+Data Warehouse using Hadoop eco system 09 01 Extract and Load Hive Theory
+by itversity
+
+15:14
+
+Data Warehouse using Hadoop eco system - 09 02 Extract and Load - Hive Load demo
+by itversity
+
+26:32
+
+Data Warehouse using Hadoop eco system - 09 03 Transformation and Load - Hive Insert Theory
+by itversity
+
+21:00
+
+Data Warehouse using Hadoop eco system - 09 04 Transformation and Load - Hive Insert Demo
+by itversity
+
+22:20
+
+Hadoop Certification - CCA - Extracting Avro schema from Avro data files using avro-tools
+by itversity
+
+16:51
+
+Hadoop Certification - CCA - Create a table in the Hive metastore using Avro
+by itversity
+
+19:05
+
+Hadoop Certification - CCA - Partitioning in Hive with Avro file format
+by itversity
+
+27:28
+
+Hadoop Certification - CCA - Avro Schema Evolution in Hive and Impala
+by itversity
+
+24:42
+
+Hadoop Certification - CCA - Conclusion and Best of luck
+by itversity
+
+9:22
+
+Hadoop Certification - 01 Sqoop common issues
+by itversity
+
+12:19
+
+Hadoop Certification - CCA - Common Issues - Connection Refused
+by itversity
+
+6:36
+
+Hadoop Certification - Common Issues - Get process details using jps, ps -ef and ps -fu commands
+by itversity
+
+6:52
+
+Hadoop Certification - Common Issues - Running applications as shell programs
+by itversity
+
+16:45
+
+Review of Ambari
+by itversity
+
+12:40
+
+Big Data - Reviewing MySQL on lab
+by itversity 

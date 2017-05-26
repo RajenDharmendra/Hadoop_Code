@@ -4,6 +4,7 @@ class LinkedList(object):
         self.value = value
         self.next = next_
 
+
 ll = [1, 2, 3, 4, 5, 6]
 head_node = LinkedList(ll[0], None)
 for i in range(len(ll)):

@@ -1,0 +1,14 @@
+Programing with RDDs:
+=====================
+    * reduce()
+        -- will be used to sum up the values and count the elements in RDD
+
+    * fold()
+        -- Same like reduce(), but by addition, it will have initial values 0
+            Example:
+                # 0 for +
+                # 1 for *
+
+============================================
+Working with Key/Value pair RDDs: Chapter 4:
+============================================

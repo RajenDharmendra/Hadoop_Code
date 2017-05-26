@@ -1,0 +1,22 @@
+==================================
+configuration with hadoop cluster:
+==================================
+    ## conf/spark-env.sh:
+    *********************
+
+        SPARK_JAVA_OPTS=-Dspark.driver.port=53411
+        HADOOP_CONF_DIR=$HADOOP_HOME/conf
+        SPARK_MASTER_IP=<HOSTNAME OF YOUR MASTER NODE>
+
+    ## conf/spark-defaults.conf:
+    ****************************
+        spark.master            spark://<HOSTNAME OF YOUR MASTER NODE>:7077
+        spark.serializer        org.apache.spark.serializer.KryoSerializer
+
+    ## conf/slaves:
+    ***************
+        HOSTNAME OF YOUR MASTER NODE>
+        <HOSTNAME OF YOUR SLAVE NODE 1>
+        ...
+        ...
+        <HOSTNAME OF YOUR SLAVE NODE n>
